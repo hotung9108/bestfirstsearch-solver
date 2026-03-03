@@ -60,7 +60,7 @@ export default function BestFirstSearchPage() {
         a.click();
         URL.revokeObjectURL(url);
     };
-
+    console.log(steps);
     return (
         <div className="min-h-screen bg-[#E4E3E0] text-[#141414] font-sans selection:bg-[#141414] selection:text-[#E4E3E0] flex flex-col">
             <header className="border-b border-[#141414] p-6 flex">
@@ -297,10 +297,7 @@ export default function BestFirstSearchPage() {
                                                                     className="inline-block px-2 py-1 rounded border border-green-400 bg-green-50 text-green-800 text-xs font-mono"
                                                                 >
                                                                     {n}
-                                                                    {idx2 <
-                                                                        s.path
-                                                                            .length -
-                                                                            1 && (
+                                                                    {idx2 <s.path.length -1 && (
                                                                         <span className="text-green-700 font-bold">
                                                                             {" "}
                                                                             →{" "}
@@ -334,17 +331,12 @@ export default function BestFirstSearchPage() {
                                                             className="inline-block px-2 py-1 rounded border border-green-400 bg-green-50 text-green-800 text-xs font-mono"
                                                         >
                                                             {n}
-                                                            {idx <
-                                                                steps[
-                                                                    steps.length -
-                                                                        1
-                                                                ].path.length -
-                                                                    1 && (
+                                                            {idx <steps[steps.length -1].path.length-1 && (
                                                                 <span className="text-green-700 font-bold">
                                                                     {" "}
                                                                     →{" "}
                                                                 </span>
-                                                            )}
+                                                            )}  
                                                         </span>
                                                     ))}
                                                 </div>
@@ -355,8 +347,9 @@ export default function BestFirstSearchPage() {
                                                     Số bước
                                                 </p>
                                                 <p className="text-2xl font-bold">
-                                                    {steps[steps.length - 1]
-                                                        .path.length - 1}
+                                                    {steps[steps.length-1]
+                                                        .path.length}
+
                                                 </p>
                                             </div>
 
